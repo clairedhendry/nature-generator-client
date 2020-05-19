@@ -1,0 +1,12 @@
+
+.colorPicker-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.colors-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 25px;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import ColorData from './ColorData/ColorData'
 
 export const DataContext = React.createContext();
 
@@ -8,12 +9,30 @@ state = {
     colorChosen: '',
     categoryChosen: '',
     user: {
-        username: 'demo-user',
+        userName: 'demo-user',
         password: 'demo-password',
         email: 'demo@email.com'
     },
-    loggedIn: false
+    loggedIn: false,
 }
+
+
+updateColorChosen = (value) => {
+
+    // const category = ColorData.find(item => {
+    //     if(item.color === value) 
+    //         return item.category[(Math.floor(Math.random() * item.category.length + 0))]})
+
+    const colorItem = ColorData.imageCategories.find(item => item.color === value);
+    const category = colorItem.category[(Math.floor(Math.random() * colorItem.category.length + 0))];
+
+    this.setState({
+        colorChosen: value,
+        categoryChosen: category
+    })
+}
+
+
 
 render() {
     return (
@@ -22,7 +41,9 @@ render() {
                 state: {
                     ...this.state
                 },
-                actions: {}
+                actions: {
+                    updateColorChosen: this.updateColorChosen
+                }
             }}>
                 {this.props.children}
             </DataContext.Provider>

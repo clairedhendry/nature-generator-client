@@ -1,13 +1,13 @@
 import React from 'react'
 
-class AudioPlayer extends React.Component {
+class RegistrationForm extends React.Component {
     render() {
         return (
             <div>
-                audio player
+                registration form
             </div>
         )
     }
 }
 
-export default AudioPlayer;
+export default RegistrationForm;

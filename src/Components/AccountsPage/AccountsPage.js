@@ -1,13 +1,13 @@
 import React from 'react'
 
-class AudioPlayer extends React.Component {
+class AccountsPage extends React.Component {
     render() {
         return (
             <div>
-                audio player
+                accounts page
             </div>
         )
     }
 }
 
-export default AudioPlayer;
+export default AccountsPage;

@@ -1,13 +1,14 @@
 import React from 'react'
 
-class AudioPlayer extends React.Component {
+class InfoSections extends React.Component {
+
     render() {
         return (
             <div>
-                audio player
+                information!
             </div>
         )
     }
 }
 
-export default AudioPlayer;
+export default InfoSections;
