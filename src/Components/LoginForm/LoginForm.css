@@ -8,13 +8,18 @@
     margin-right: auto;
 }
 
+.loginForm {
+    display: flex;
+}
+
 
 .loginForm-container {
-    text-align: center;
+    display: flex;
+    text-align: left;
     width: 100%;
 }
 
 .loginForm > input, label {
-    margin-left: 10px;
+    margin-left: 5px;
 
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { DataContext } from '../../Context'
+import LoginForm from '../LoginForm/LoginForm'
 import './TopNavBar.css'
 
 
@@ -24,8 +25,8 @@ checkIfLoggedIn = () => {
     if(!this.state.loggedIn) {
         return (
             <div className="navBar">
-                <Link to='/login'>Login</Link>
-                {/* <LoginForm/> */}
+                {/* <Link to='/login'>Login</Link> */}
+                <LoginForm/>
                 <Link to='/registration'>Register</Link>
                 <Link to='/'>Home</Link>
             </div>

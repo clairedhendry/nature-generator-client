@@ -16,7 +16,7 @@ handleFormSubmit = (e) => {
     //validate credentials
     this.context.actions.updateLoggedIn();
     this.setState({
-        loggedIn: true
+        loggedIn: true,
     })
 }
 
@@ -40,6 +40,9 @@ updatePassword = (value) => {
 }
 
     render() {
+
+
+
         return(
             <div className="loginForm-container">
                 <form className="loginForm" onSubmit={e => this.handleFormSubmit(e)}>
