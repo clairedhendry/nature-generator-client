@@ -5,8 +5,24 @@
 }
 
 .colors-box {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 80px);
+    justify-items: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+@media only screen and (min-width: 600px) {
+.colors-box {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 25px;
+}
+
 }

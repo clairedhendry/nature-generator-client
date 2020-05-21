@@ -1,6 +1,14 @@
 .sidebar-container {
+    margin-top: 50px;
+}
+
+
+@media only screen and (min-width: 600px) {
+.sidebar-container {
     height: 100vh;
     width: 150px;
     background-color: grey;
     padding-top: 50px;
+}
+
 }
