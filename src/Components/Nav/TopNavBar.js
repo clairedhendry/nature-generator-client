@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { DataConsumer } from '../../Context'
 import { DataContext } from '../../Context'
 import './TopNavBar.css'
+
 
 //top nav bar needs to: 
 // link to registration form 
@@ -19,22 +19,29 @@ class TopNavBar extends React.Component {
         userName: this.context.state.user.userName,
     }
 
-
-checkIfLoggedIn() {
+checkIfLoggedIn = () => {
+ 
     if(!this.state.loggedIn) {
         return (
-            <div>
-                <div>User Login Form</div>
+            <div className="navBar">
+                <Link to='/login'>Login</Link>
+                {/* <LoginForm/> */}
                 <Link to='/registration'>Register</Link>
+                <Link to='/'>Home</Link>
             </div>
         )
     } else {
         return (
-        <div>Welcome back {this.state.userName}</div>
+        <div className="navBar">
+            <div>Welcome back {this.state.userName}</div>
+            <Link to="/accounts/:user_name">Account</Link>
+            <Link to='/'>Home</Link>
+        </div>
         )
     }
     
 }
+
 
     render() {
 
@@ -45,7 +52,6 @@ const options = this.checkIfLoggedIn();
 
             <div className="top-nav-bar">
                 {options}
-
             </div>
                 
                 

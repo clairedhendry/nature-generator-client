@@ -1,0 +1,9 @@
+.slideshow-container {
+    height: 500px;
+    margin-top: 50px;
+}
+
+.slides {
+    height: 90%;
+    background-color: rgb(173, 173, 173);
+}

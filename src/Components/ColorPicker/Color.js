@@ -1,5 +1,6 @@
 import React from 'react'
 import { DataContext } from '../../Context'
+import { Link } from 'react-router-dom'
 import './Color.css'
 
 
@@ -9,26 +10,26 @@ static contextType = DataContext;
 
 handleButtonClick = () => {
     this.context.actions.updateColorChosen(this.props.color)
+    this.context.actions.updateSlideshowEngaged()
 } 
 
     render() {
 
-let colorClassName = ""
-if(this.props.color) {
-    colorClassName += this.props.color
-}
+
+let colorClassName = `${this.props.color}`
+
+let path = `/slideshow/${colorClassName}`
 
         return (
-            <div >
-               <button 
-               className={colorClassName} 
-               type="button" 
-               aria-label={colorClassName} 
-               id={colorClassName}
-               onClick={this.handleButtonClick}>
-                   
-               </button>
-            </div>
+            <Link 
+                to={path}
+                className={colorClassName} 
+                type="button" 
+                aria-label={colorClassName} 
+                id={colorClassName}
+                onClick={this.handleButtonClick}>
+            </Link>
+         
         )
     }
 

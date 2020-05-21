@@ -3,7 +3,7 @@ import './Header.css'
 
 const Header = () => (
     <div className="header">
-        Creative New App Name!
+        Nature Generator 2.0!
     </div>
 )
 
