@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { DataContext } from '../../Context'
 import LoginForm from '../LoginForm/LoginForm'
 import './TopNavBar.css'
+import TokenService from '../../services/token-service'
 
 
 //top nav bar needs to: 
@@ -20,40 +21,42 @@ class TopNavBar extends React.Component {
         userName: this.context.state.user.userName,
     }
 
-checkIfLoggedIn = () => {
- 
-    if(!this.state.loggedIn) {
+handleLogOutClick = () => {
+
+}
+
+renderLogInForm() {
+                
         return (
             <div className="navBar">
-                {/* <Link to='/login'>Login</Link> */}
                 <LoginForm/>
                 <Link to='/registration'>Register</Link>
                 <Link to='/'>Home</Link>
             </div>
         )
-    } else {
+    }
+    
+renderLogOutLink() {
         return (
         <div className="navBar">
-            <div>Welcome back {this.state.userName}</div>
+            <Link onClick={this.handleLogOutClick} to='/'>LogOut</Link>
             <Link to="/accounts/:user_name">Account</Link>
             <Link to='/'>Home</Link>
         </div>
         )
     }
     
-}
+
 
 
     render() {
-
-const options = this.checkIfLoggedIn();
-    
-
         return (
 
-            <div className="top-nav-bar">
-                {options}
-            </div>
+            <nav className="top-nav-bar">
+                {TokenService.hasAuthToken() 
+                ? this.renderLogOutLink()
+                : this.renderLogInForm()}
+            </nav>
                 
                 
           

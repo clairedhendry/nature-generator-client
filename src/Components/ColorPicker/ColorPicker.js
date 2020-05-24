@@ -8,6 +8,8 @@ class ColorPicker extends React.Component {
 
 static contextType = DataContext;
 
+
+
     render() 
     {
 
@@ -26,6 +28,7 @@ static contextType = DataContext;
 
 const colors = ColorData.imageCategories.map(color => {
     
+
     return (
         <Color color={color.color} key={color.id}/>
     ) })

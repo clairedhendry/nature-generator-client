@@ -1,5 +1,7 @@
 import React from 'react'
 import { DataContext } from '../../Context'
+
+import config from '../../config'
 import { Link } from 'react-router-dom'
 import './Color.css'
 
@@ -8,12 +10,22 @@ export default class Color extends React.Component {
 
 static contextType = DataContext;
 
-handleButtonClick = () => {
-    this.context.actions.updateColorChosen(this.props.color)
-    this.context.actions.updateSlideshowEngaged()
-} 
+state = {
+    colorChosen: this.props.color,
+   
+}
 
-    render() {
+    handleButtonClick = () => {
+        this.context.actions.updateColorChosen(this.props.color)     
+        this.context.actions.updateSlideshowEngaged()
+        this.context.actions.clearFetchData()
+        
+    } 
+
+
+
+render() {
+
 
 
 let colorClassName = `${this.props.color}`

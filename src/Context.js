@@ -1,13 +1,15 @@
 import React from 'react'
 import ColorData from './ColorData/ColorData'
+import config from './config'
+import slideshowApiService from './services/slideshow-api-services'
 
 export const DataContext = React.createContext();
 
 export class DataProvider extends React.Component {
 
 state = {
-    colorChosen: '',
-    categoryChosen: '',
+    colorChosen: "",
+    categoryChosen: "",
     chosenColorCategories: '',
     user: {
         userName: 'demo-user',
@@ -20,8 +22,9 @@ state = {
         mp3: "",
     },
     slideshowEngaged: false,
-    slides: [],
+    photoData: [],
     authorization: "",
+    orientation: 'portrait'
 }
 
 
@@ -29,11 +32,39 @@ updateColorChosen = (value) => {
 
     const colorItem = ColorData.imageCategories.find(item => item.color === value);
     const category = colorItem.category[(Math.floor(Math.random() * colorItem.category.length + 0))];
+   
+  
+    const orientation = this.state.orientation
+    const searchUrl = `https://pixabay.com/api/?key=15386213-fd2b415b0403776dbc63e2f69`;
+    const searchCategory = `${encodeURIComponent("q")}=${encodeURIComponent(category)}`;
+    const searchColor = `${encodeURIComponent("colors")}=${encodeURIComponent(value)}`;
+  
+    const queryField =
+      searchUrl + `&` + searchCategory +
+      `&image_type=photo&category=nature&orientation=${orientation}&safesearch="true"` +
+      `&` + searchColor;
+  
+    fetch(queryField)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+     
+      .then(data => {
+          this.setState({
+              colorChosen: value,
+              categoryChosen: category,
+              photoData: data,
+          })
+      })
+      .catch((err) => {
+        alert(`something went wrong: ${err.message}`)
+      });
+    
 
-    this.setState({
-        colorChosen: value,
-        categoryChosen: category
-    })
 }
 
 updateSlideshowEngaged = () => {
@@ -45,65 +76,9 @@ updateSlideshowEngaged = () => {
 
 updateColorCategories = (value) => {
     const color = ColorData.imageCategories.find(color => color.color === value)
-    return color.category
-}
-
-
-generateSlideshow = (color, category) => {
-//send information to server for GET request
-//server should return from API based on color and category selections
-fetch('https://localhost:8000/slides', {
-    method: "GET",
-    header: {
-        "Content-Type": "application/json",
-        "Authorization": this.state.authorization,
-        "color": color,
-        "category": category
-    }
-})
-    .then(response => {
-        if(response.ok) {
-            return response.json();
-        } else {
-            throw new Error(response.statusText)
-        }
+    this.setState({
+        chosenColorCategories: color.category
     })
-    .then(data => 
-        this.setState({
-            slides: data
-        }))
-    .catch(err => alert(`something went wrong: ${err.message}`))
-
-}
-
-generateAudioTrack = (color, category) => {
-//GET request to server for audio track
-//server should send back both ogg and mp3 versions of track
-    fetch('https://localhost:8000/audio', {
-    method: "GET",
-    header: {
-        "Content-Type": "application/json",
-        "Authorization": this.state.authorization,
-        "color": color,
-        "category": category,
-    }
-})
-    .then(response => {
-        if(response.ok) {
-            return response.json();
-        } else {
-            throw new Error(response.statusText)
-        }
-    })
-    .then(data => 
-        this.setState({
-            audio: {
-                ogg: data.ogg,
-                mp3: data.mp3,
-            }
-        }))
-    .catch(err => alert(`something went wrong: ${err.message}`))
-
 }
 
 updateLoggedIn = () => {
@@ -113,6 +88,49 @@ updateLoggedIn = () => {
         })
     }
 }
+
+clearFetchData = () => {
+    this.setState({
+        photoData: []
+    })
+}
+
+//  fetchPhotos = () =>  {
+//         const color = this.state.colorChosen
+//         const category = this.state.categoryChosen
+//         const orientation = this.state.orientation
+//         const searchUrl = `https://pixabay.com/api/?key=15386213-fd2b415b0403776dbc63e2f69`;
+//         const searchCategory = `${encodeURIComponent("q")}=${encodeURIComponent(category)}`;
+//         const searchColor = `${encodeURIComponent("colors")}=${encodeURIComponent(color)}`;
+      
+//         const queryField =
+//           searchUrl + `&` + searchCategory +
+//           `&image_type=photo&category=nature&orientation=${orientation}&safesearch="true"` +
+//           `&` + searchColor;
+      
+//         fetch(queryField)
+//           .then((response) => {
+//             if (response.ok) {
+//               return response.json();
+//             } else {
+//               throw new Error(response.statusText);
+//             }
+//           })
+         
+//           .then(data => {
+//               this.setState({
+//                   colorChosen: "",
+//                   categoryChosen: "",
+//                   photoData: data,
+//               })
+//           })
+//           .catch((err) => {
+//             alert(`something went wrong: ${err.message}`)
+//           });
+        
+//     }
+
+
 
 render() {
     return (
@@ -128,6 +146,8 @@ render() {
                     generateAudioTrack: this.generateAudioTrack,
                     updateLoggedIn: this.updateLoggedIn,
                     updateColorCategories: this.updateColorCategories,
+                    clearFetchData: this.clearFetchData,
+                    fetchPhotos: this.fetchPhotos,
                 }
             }}>
                 {this.props.children}

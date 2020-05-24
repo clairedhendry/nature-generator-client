@@ -1,6 +1,7 @@
 import React from 'react'
 import './LoginForm.css'
 import {DataContext} from '../../Context'
+import TokenService from '../../services/token-service'
 
 export default class LoginForm extends React.Component {
 
@@ -8,18 +9,20 @@ static contextType = DataContext;
 
 state = {
     username: "",
-    password: "",
 }
 
-handleFormSubmit = (e) => {
-    e.preventDefault();
-    //validate credentials
-    this.context.actions.updateLoggedIn();
-    this.setState({
-        loggedIn: true,
-    })
-}
+handleSubmitBasicAuth = (e) => {
 
+     e.preventDefault()
+    const { user_name, password } = e.target
+
+    TokenService.saveAuthToken(
+      TokenService.makeBasicAuthToken(user_name.value, password.value)
+    )
+
+    user_name.value = ''
+    password.value = ''
+}
 
 
 //need to validate login credentials
@@ -33,26 +36,21 @@ updateUsername = (value) => {
     })
 }
 
-updatePassword = (value) => {
-    this.setState({
-        password: value
-    })
-}
-
     render() {
 
 
 
         return(
             <div className="loginForm-container">
-                <form className="loginForm" onSubmit={e => this.handleFormSubmit(e)}>
-                    <label htmlFor="username">Username</label>
+                <form className="loginForm" onSubmit={this.handleSubmitBasicAuth}>
+                    <label htmlFor="user_name">Username</label>
                     <input type="text" 
-                        name="username"
+                        name="user_name"
                         placeholder="username"
                         size="12"
                         onChange={e => this.updateUsername(e.target.value)}
-                        value={this.state.username.value} 
+                        id="Login_user_name"
+                        required
                         />
                         <br />
                     <label htmlFor="password">Password</label>
@@ -60,8 +58,8 @@ updatePassword = (value) => {
                         name="password"
                         placeholder="password"
                         size="12"
-                        onChange={e => this.updatePassword(e.target.value)}
-                        value={this.state.password.value}
+                        id="Login_password"
+                        required
                     />
                     <br />
                     <button type="submit">Login</button>
