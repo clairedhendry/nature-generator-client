@@ -1,5 +1,6 @@
 import React from 'react'
-import './Slides.css'
+import './Slideshow.css'
+
 
 export default class Slides extends React.Component {
 

@@ -16,10 +16,10 @@ state = {
 }
 
     handleButtonClick = () => {
-        this.context.actions.updateColorChosen(this.props.color)     
-        this.context.actions.updateSlideshowEngaged()
-        this.context.actions.clearFetchData()
         
+        this.context.actions.updateSlideshowEngaged()
+        this.context.actions.clearFetchData()        
+        this.context.actions.updateColorChosen(this.props.color)   
     } 
 
 

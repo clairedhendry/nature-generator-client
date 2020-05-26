@@ -1,7 +1,7 @@
 import React from 'react'
 import ColorData from './ColorData/ColorData'
 import config from './config'
-import slideshowApiService from './services/slideshow-api-services'
+import slideshowApiService from './services/userphotos-api-services'
 
 export const DataContext = React.createContext();
 
@@ -28,16 +28,16 @@ state = {
 }
 
 
-updateColorChosen = (value) => {
+updateColorChosen = (color) => {
 
-    const colorItem = ColorData.imageCategories.find(item => item.color === value);
+    const colorItem = ColorData.imageCategories.find(item => item.color === color);
     const category = colorItem.category[(Math.floor(Math.random() * colorItem.category.length + 0))];
    
   
     const orientation = this.state.orientation
     const searchUrl = `https://pixabay.com/api/?key=15386213-fd2b415b0403776dbc63e2f69`;
     const searchCategory = `${encodeURIComponent("q")}=${encodeURIComponent(category)}`;
-    const searchColor = `${encodeURIComponent("colors")}=${encodeURIComponent(value)}`;
+    const searchColor = `${encodeURIComponent("colors")}=${encodeURIComponent(color)}`;
   
     const queryField =
       searchUrl + `&` + searchCategory +
@@ -55,7 +55,7 @@ updateColorChosen = (value) => {
      
       .then(data => {
           this.setState({
-              colorChosen: value,
+              colorChosen: color,
               categoryChosen: category,
               photoData: data,
           })
@@ -63,9 +63,73 @@ updateColorChosen = (value) => {
       .catch((err) => {
         alert(`something went wrong: ${err.message}`)
       });
-    
-
+      
+    fetch(`http://localhost:8000/api/audio/${color}/${category}`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        }
+       
+    })
+    .then((res) => {
+        if(res.ok) {
+            return res.json();
+        } else {
+            throw new Error(res.statusText);
+        }
+    })
+    .then(data => {
+        this.setState({
+            audio: {
+                mp3: data[0].mp3_url,
+                ogg: data[0].ogg_url
+            }
+        })
+    })
+    .catch((err) => {
+        console.log(`something went wrong: ${err.message}`)
+    })
 }
+
+
+
+// updateAudioSource = (color, category) => {
+//    if (this.state.categoryChosen.length === 0) {
+//             this.setState({
+//                 audio: {
+//                     mp3: 'loading',
+//                     ogg: 'loading'
+//                 }
+//             })    
+//     } else {
+
+//     fetch(`http://localhost:8000/api/audio/${color}/${category}`, {
+//         method: 'GET',
+//         headers: {
+//             'content-type': 'application/json'
+//         }
+       
+//     })
+//     .then((res) => {
+//         if(res.ok) {
+//             return res.json();
+//         } else {
+//             throw new Error(res.statusText);
+//         }
+//     })
+//     .then(data => {
+//         this.setState({
+//             audio: {
+//                 mp3: data.mp3_url,
+//                 ogg: data.ogg_url
+//             }
+//         })
+//     })
+//     .catch((err) => {
+//         alert(`something went wrong: ${err.message}`)
+//     })
+// }
+// }
 
 updateSlideshowEngaged = () => {
     if(!this.state.slideshowEngaged)
@@ -147,7 +211,6 @@ render() {
                     updateLoggedIn: this.updateLoggedIn,
                     updateColorCategories: this.updateColorCategories,
                     clearFetchData: this.clearFetchData,
-                    fetchPhotos: this.fetchPhotos,
                 }
             }}>
                 {this.props.children}

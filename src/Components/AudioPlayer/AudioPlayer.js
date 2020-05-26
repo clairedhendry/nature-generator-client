@@ -1,5 +1,7 @@
 import React from 'react'
+import ReactAudioPlayer from 'react-audio-player'
 import { DataContext } from '../../Context'
+
 
 class AudioPlayer extends React.Component {
 
@@ -12,15 +14,28 @@ state = {
     }
 }
 
+// componentDidMount() {
+//     this.setState({
+//         audio: {
+//             ogg: this.context.state.audio.ogg,
+//             mp3: this.context.state.audio.mp3
+//         }
+//     })
+// }
+
 
     render() {
         return (
             <div className="audio-player">
-                <audio controls>
-                    <source src={this.state.audio.ogg} type="audio/ogg" />
-                    <source src={this.state.audio.mp3} type="audio/mpeg" />
-                    Your browser does not support the audio tag.
-                </audio>
+                <ReactAudioPlayer
+          
+                    src={this.context.state.audio.ogg} type="audio/ogg" 
+                    src={this.context.state.audio.mp3} type="audio/mpeg"
+                    autoPlay
+                    controls
+                    loop
+                   
+                />
             </div>
         )
     }

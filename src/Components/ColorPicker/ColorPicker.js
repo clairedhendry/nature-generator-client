@@ -10,21 +10,8 @@ static contextType = DataContext;
 
 
 
-    render() 
-    {
+    render() {
 
-// const colors = ColorData.imageCategories.map(color => {
-//     if(!this.context.state.slideshowEngaged) {
-//     return (
-//         <Color color={color.color} key={color.id} path="./slideshow/"/>
-//     ) }
-//     else {
-//         return (
-//             <Color color={color.color} key={color.id} path=""/>
-//         )
-//     }
-// })
-    
 
 const colors = ColorData.imageCategories.map(color => {
     

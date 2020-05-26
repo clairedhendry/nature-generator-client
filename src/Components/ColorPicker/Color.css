@@ -8,6 +8,60 @@
 
 a#red {
     background-color: red;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.orange {
+    background-color: orange;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.yellow {
+    background-color: yellow;
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.green {
+    background-color: green;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.blue {
+    background-color: blue;
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.purple {
+    background-color: purple;
+    grid-column: 5;
+    grid-row: 2;
+}
+
+.white {
+    background-color: white;
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.grey {
+    background-color: grey;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.black {
+    background-color: rgb(26, 26, 26);
+    grid-column: 5;
+    grid-row: 3;
+}
+
+/* a#red {
+    background-color: red;
     grid-column: 4;
     grid-row: 2;
 }
@@ -58,4 +112,4 @@ a#red {
     background-color: rgb(26, 26, 26);
     grid-column: 3;
     grid-row: 1;
-}
+} */
