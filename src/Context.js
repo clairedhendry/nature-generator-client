@@ -35,7 +35,7 @@ updateColorChosen = (color) => {
    
   
     const orientation = this.state.orientation
-    const searchUrl = `https://pixabay.com/api/?key=15386213-fd2b415b0403776dbc63e2f69`;
+    const searchUrl = `https://pixabay.com/api/?key=${config.API_KEY}`;
     const searchCategory = `${encodeURIComponent("q")}=${encodeURIComponent(category)}`;
     const searchColor = `${encodeURIComponent("colors")}=${encodeURIComponent(color)}`;
   
@@ -64,7 +64,7 @@ updateColorChosen = (color) => {
         alert(`something went wrong: ${err.message}`)
       });
       
-    fetch(`http://localhost:8000/api/audio/${color}/${category}`, {
+    fetch(`https://murmuring-dawn-57367.herokuapp.com//api/audio/${color}/${category}`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
