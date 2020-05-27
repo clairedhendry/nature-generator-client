@@ -1,43 +1,8 @@
 import React from 'react'
 import './Slideshow.css'
-import Slides from './slides'
 import { DataContext } from '../../Context'
-import { Slide } from 'react-slideshow-image'
 import { Zoom } from 'react-slideshow-image'
-
-// class Slideshow extends React.Component {
-
-// static contextType = DataContext;
-
-
-// checkForPhotos() {
-    
-//     if(this.context.state.photoData.length === 0) {
-        
-//         return (
-//             <div>Loading...</div>
-//         )
-//     } else {
-//     return this.context.state.photoData.hits.map((photo, index)=> 
-//         <Slides key={photo.id} source={photo.webformatURL} type={photo.type} tags={photo.tags} index={index}/>)
-// }
-
-// }
-
-
-// render() {
-
-//         return (
-//             <div className="slideshow-container">
-//                <div className="slides">
-//                    {this.checkForPhotos()}
-//                </div>
-//             </div>
-//         )
-//     }
-// }
-
-
+import PixabayLogo from '../../image_files/Pixabay_Logo'
 
    
 const zoomOutProperties = {
@@ -77,15 +42,14 @@ componentDidMount() {
     this.updateImages()
 }
 
-
-
     render() {
 
 
       return (
          
-             <div className="slide-container">
+            <div className="slide-container">
                 {this.updateImages()}
+                <PixabayLogo />
             </div>
          
       )

@@ -1,5 +1,4 @@
 .footer {
     text-align: center;
-    position: relative;
-    bottom: 0;
+    justify-content: center;
 }
