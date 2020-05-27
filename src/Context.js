@@ -41,7 +41,7 @@ updateColorChosen = (color) => {
   
     const queryField =
       searchUrl + `&` + searchCategory +
-      `&image_type=photo&category=nature&orientation=${orientation}&safesearch="true"` +
+      `&image_type=photo&category=nature&orientation=${orientation}&safesearch="true"&per_page=50&order="latest"` +
       `&` + searchColor;
   
     fetch(queryField)
