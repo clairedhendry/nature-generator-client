@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react'
+
 import './Slideshow.css'
 import { DataContext } from '../../Context'
 import { Zoom } from 'react-slideshow-image'
 import PixabayLogo from '../../image_files/Pixabay_Logo'
-import SliderContent from './SliderContent'
+
 import Slides from './slides'
 
 
