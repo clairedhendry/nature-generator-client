@@ -1,4 +1,4 @@
-
+import React from 'react'
 import './Slideshow.css'
 import { DataContext } from '../../Context'
 import { Zoom } from 'react-slideshow-image'
