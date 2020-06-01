@@ -64,7 +64,7 @@ updateColorChosen = (color) => {
         alert(`something went wrong: ${err.message}`)
       });
       
-    fetch(`${config.API_BASE_URL}/api/audio/${color}/${category}`, {
+    fetch(`${config.API_BASE_URL}api/audio/${color}/${category}`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
