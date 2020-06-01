@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Slideshow.css'
 import { DataContext } from '../../Context'
 import { Zoom } from 'react-slideshow-image'
 import PixabayLogo from '../../image_files/Pixabay_Logo'
+import SliderContent from './SliderContent'
+import Slides from './slides'
+
+
 
    
 const zoomOutProperties = {
@@ -56,4 +60,66 @@ componentDidMount() {
   }
 }
 
+
+
+// class Slideshow extends React.Component {
+
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       currentSlide: 0,
+//     };
+//   }
+
+//   static contextType = DataContext;
+
+// state = {
+//    currentSlide: 0
+//  } 
+
+// displayImages() {
+
+
+//     if(this.context.state.photoData.length === 0) {
+//       return (
+//         <div>Loading...</div>
+//       )
+//     } else {
+//       return (
+//         <div className="sliderContent">
+
+//             {this.context.state.photoData.hits.map((slide, i) => (
+           
+//                 <Slides key={i} index={i} src={slide.webformatURL} />
+             
+//             ))}
+        
+//         </div>
+//       )
+//     }
+//   }
+//   componentDidMount() {
+//     this.displayImages()
+  
+//   }
+
+// showImage(i) {
+
+// }
+
+//  render() {
+//     return(
+//       <div className="slideshow-slider">
+//         {this.displayImages()}
+//         <PixabayLogo />
+//       </div>
+//     )
+//   }
+
+
+// }
+
+
+
 export default Slideshow;
+

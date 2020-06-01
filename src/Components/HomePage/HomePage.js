@@ -12,7 +12,7 @@ class HomePage extends React.Component {
                 <TopNavBar/>
                 <Header />
                 <ColorPicker/>
-                <InfoSections/>
+                {/* <InfoSections/> */}
                 <Footer />
             </div>
         )

@@ -27,10 +27,9 @@ static contextType = DataContext;
         </div>
         <main>
           <Route exact path="/" component={HomePage}/>
-          {/* <Route path="/login" component={LoginFormPage}/> */}
           <Route path="/slideshow/:color" component={SlideshowPage}/>
-          <Route exact path="/registration" component={RegistrationPage}/>
-          <Route path="/accounts/:user_name" component={AccountsPage}/>
+          {/* <Route exact path="/registration" component={RegistrationPage}/>
+          <Route path="/accounts/:user_name" component={AccountsPage}/> */}
         </main>
       </div>
     )
