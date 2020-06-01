@@ -9,7 +9,6 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <TopNavBar/>
                 <Header />
                 <ColorPicker/>
                 <InfoSections/>

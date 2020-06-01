@@ -13,7 +13,7 @@ const zoomOutProperties = {
     duration: 10000,
     transitionDuration: 800,
     infinite: true,
-    indicators: true,
+    indicators: false,
     scale: 0.4,
     arrows: false,
     pauseOnHover: true

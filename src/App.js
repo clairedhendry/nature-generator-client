@@ -22,9 +22,9 @@ static contextType = DataContext;
 
     return (
       <div className="main_body">
-        <div>
+        {/* <div>
           <TopNavBar />
-        </div>
+        </div> */}
         <main>
           <Route exact path="/" component={HomePage}/>
           <Route path="/slideshow/:color" component={SlideshowPage}/>
