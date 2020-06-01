@@ -14,15 +14,6 @@ state = {
     }
 }
 
-// componentDidMount() {
-//     this.setState({
-//         audio: {
-//             ogg: this.context.state.audio.ogg,
-//             mp3: this.context.state.audio.mp3
-//         }
-//     })
-// }
-
 
     render() {
         return (
