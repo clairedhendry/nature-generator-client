@@ -29,8 +29,8 @@ renderLogInForm() {
                 
         return (
             <div className="navBar">
-                <LoginForm/>
-                <Link to='/registration'>Register</Link>
+                {/* <LoginForm/>
+                <Link to='/registration'>Register</Link> */}
                 <Link to='/'>Home</Link>
             </div>
         )
@@ -39,8 +39,8 @@ renderLogInForm() {
 renderLogOutLink() {
         return (
         <div className="navBar">
-            <Link onClick={this.handleLogOutClick} to='/'>LogOut</Link>
-            <Link to="/accounts/:user_name">Account</Link>
+            {/* <Link onClick={this.handleLogOutClick} to='/'>LogOut</Link>
+            <Link to="/accounts/:user_name">Account</Link> */}
             <Link to='/'>Home</Link>
         </div>
         )

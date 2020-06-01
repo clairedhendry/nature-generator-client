@@ -64,7 +64,7 @@ updateColorChosen = (color) => {
         alert(`something went wrong: ${err.message}`)
       });
       
-    fetch(`https://murmuring-dawn-57367.herokuapp.com/api/audio/${color}/${category}`, {
+    fetch(`${config.API_BASE_URL}api/audio/${color}/${category}`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
@@ -93,43 +93,7 @@ updateColorChosen = (color) => {
 
 
 
-// updateAudioSource = (color, category) => {
-//    if (this.state.categoryChosen.length === 0) {
-//             this.setState({
-//                 audio: {
-//                     mp3: 'loading',
-//                     ogg: 'loading'
-//                 }
-//             })    
-//     } else {
 
-//     fetch(`http://localhost:8000/api/audio/${color}/${category}`, {
-//         method: 'GET',
-//         headers: {
-//             'content-type': 'application/json'
-//         }
-       
-//     })
-//     .then((res) => {
-//         if(res.ok) {
-//             return res.json();
-//         } else {
-//             throw new Error(res.statusText);
-//         }
-//     })
-//     .then(data => {
-//         this.setState({
-//             audio: {
-//                 mp3: data.mp3_url,
-//                 ogg: data.ogg_url
-//             }
-//         })
-//     })
-//     .catch((err) => {
-//         alert(`something went wrong: ${err.message}`)
-//     })
-// }
-// }
 
 updateSlideshowEngaged = () => {
     if(!this.state.slideshowEngaged)
@@ -159,40 +123,7 @@ clearFetchData = () => {
     })
 }
 
-//  fetchPhotos = () =>  {
-//         const color = this.state.colorChosen
-//         const category = this.state.categoryChosen
-//         const orientation = this.state.orientation
-//         const searchUrl = `https://pixabay.com/api/?key=15386213-fd2b415b0403776dbc63e2f69`;
-//         const searchCategory = `${encodeURIComponent("q")}=${encodeURIComponent(category)}`;
-//         const searchColor = `${encodeURIComponent("colors")}=${encodeURIComponent(color)}`;
-      
-//         const queryField =
-//           searchUrl + `&` + searchCategory +
-//           `&image_type=photo&category=nature&orientation=${orientation}&safesearch="true"` +
-//           `&` + searchColor;
-      
-//         fetch(queryField)
-//           .then((response) => {
-//             if (response.ok) {
-//               return response.json();
-//             } else {
-//               throw new Error(response.statusText);
-//             }
-//           })
-         
-//           .then(data => {
-//               this.setState({
-//                   colorChosen: "",
-//                   categoryChosen: "",
-//                   photoData: data,
-//               })
-//           })
-//           .catch((err) => {
-//             alert(`something went wrong: ${err.message}`)
-//           });
-        
-//     }
+
 
 
 
