@@ -13,10 +13,9 @@ class SlideshowPage extends React.Component {
         return (
             <div className="slideshow-page">
                 <TopNavBar />
+                {/* <AudioPlayer /> */}
                 <Slideshow />
-                    <ColorPicker isActive={true}/>
-                    <AudioPlayer isActive={true}/>
-              
+                <ColorPicker />
                 <Footer />
             </div>
         )

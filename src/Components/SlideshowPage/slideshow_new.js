@@ -31,21 +31,67 @@ export default class Slideshow extends React.Component {
         clearInterval(this.timer);
     }
 
+    renderPhoto() {
+        const width = window.innerWidth;
+        if(width <= 500) {
+            return(
+            <div className="slideshow">
+            {this.context.state.photoData.hits.map(
+                (img, i) => 
+            
+                this.state.currentImage === i && (
+                    <div className="slide fade-in"
+                    id={i}
+                    key={i}
+                    style={{ backgroundImage: `url(${img.webformatURL})`}}
+                    />
+                    )
+                    
+                )}
+            </div>
+            )}
+        else {
+            return (
+            <div className="slideshow">
+             {this.context.state.photoData.hits.map(
+                (img, i) => 
+           
+                this.state.currentImage === i && (
+                    <div className="slide fade-in"
+                    id={i}
+                    key={i}
+                    style={{ backgroundImage: `url(${img.largeImageURL})`}}
+                    />
+                    )
+                
+                )}
+            </div>
+                )
+            }
+        }
+
     render() {
+
+ 
+    const photos = this.renderPhoto()
+
         return (
             <div className="slideshow-container">
-                <div className="slideshow">
+                {/* <div className="slideshow">
                     {this.context.state.photoData.hits.map(
                         (img, i) => 
+                       
                         this.state.currentImage === i && (
                             <div className="slide fade-in"
                             id={i}
                             key={i}
-                            style={{ backgroundImage: `url(${img.largeImageURL})`}}
+                            style={{ backgroundImage: `url(${img.photoWidth})`}}
                             />
                         )
+                        
                     )}
-                </div>
+                </div> */}
+                {photos}
             </div>
         )
     }

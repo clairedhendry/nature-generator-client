@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { DataContext } from '../../Context'
 import './TopNavBar.css'
 import TokenService from '../../services/token-service'
+import AudioPlayer from '../AudioPlayer/AudioPlayer'
 
 class TopNavBar extends React.Component {
 
@@ -20,8 +21,12 @@ class TopNavBar extends React.Component {
 
         return (
 
+
+
             <nav className="top-nav-bar">
                 <Link to='/' >Home</Link>
+                <div className="spacer"></div>
+                <AudioPlayer />
             </nav>
                 
                 

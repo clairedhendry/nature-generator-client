@@ -1,3 +1,15 @@
-.hidden {
-    display: none;
+.audio-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+}
+
+.audio-player:hover {
+    opacity: 1;
+}
+
+.react-audio-player:hover {
+    z-index: 12;
+    visibility: visible;
 }
