@@ -1,7 +1,6 @@
 import React from 'react'
 import { DataContext } from '../../Context'
 
-import config from '../../config'
 import { Link } from 'react-router-dom'
 import './Color.css'
 

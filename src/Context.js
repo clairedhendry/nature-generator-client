@@ -1,7 +1,7 @@
 import React from 'react'
 import ColorData from './ColorData/ColorData'
 import config from './config'
-import slideshowApiService from './services/userphotos-api-services'
+
 
 export const DataContext = React.createContext();
 

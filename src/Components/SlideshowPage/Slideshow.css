@@ -1,8 +1,19 @@
+.slideshow-page {
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+
 .slide-container {
-    width: 70%;
+    width: 100%;
     margin: auto; 
     padding-top: 50px;
     max-height: 800px;
+}
+
+.slide-container:hover {
+  opacity: 0.5;
 }
   
   h3 {

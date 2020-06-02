@@ -4,10 +4,6 @@ import { DataContext } from '../../Context'
 import { Zoom } from 'react-slideshow-image'
 import PixabayLogo from '../../image_files/Pixabay_Logo'
 
-import Slides from './slides'
-
-
-
    
 const zoomOutProperties = {
     duration: 10000,
@@ -34,7 +30,7 @@ class Slideshow extends React.Component {
             <Zoom {...zoomOutProperties}>
             {
               this.context.state.photoData.hits.map((each, index) => 
-              <img key={index} style={{width: "100%", maxHeight: "500px"}} src={each.webformatURL} />)
+              <img key={index} style={{width: "100%", maxHeight: "500px"}} src={each.webformatURL} alt={`${each.type} of ${each.tags}`}/>)
             }
           </Zoom>
         )

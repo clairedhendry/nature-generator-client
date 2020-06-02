@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     z-index: 10;
-    font-size: small;
+    font-size: medium;
     padding-right: 15px;
     padding-left: 15px;
 }
@@ -19,4 +19,7 @@
 
 .navBar > a {
     margin-left: 10px;
+    text-decoration: none;
+    stroke-width: 2;
+    color: white;
 } 

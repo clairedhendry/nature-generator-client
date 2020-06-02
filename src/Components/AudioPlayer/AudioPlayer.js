@@ -16,13 +16,16 @@ state = {
 
 
     render() {
+
+
+        
         return (
             <div className="audio-player">
                 <ReactAudioPlayer
           
                     src={this.context.state.audio.ogg} type="audio/ogg" 
                     src={this.context.state.audio.mp3} type="audio/mpeg"
-                    autoPlay
+                  
                     controls
                     loop
                    

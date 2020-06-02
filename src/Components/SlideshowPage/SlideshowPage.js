@@ -3,20 +3,20 @@ import Slideshow from './Slideshow'
 import ColorPicker from '../ColorPicker/ColorPicker'
 import AudioPlayer from '../AudioPlayer/AudioPlayer'
 import Footer from '../Footer/Footer'
-import { DataContext } from '../../Context'
+import TopNavBar from '../Nav/TopNavBar'
+
 
 class SlideshowPage extends React.Component {
-
-static contextType = DataContext
-
 
     render() {
 
         return (
-            <div>
+            <div className="slideshow-page">
+                <TopNavBar />
                 <Slideshow />
-                <ColorPicker />
-                <AudioPlayer />
+                    <ColorPicker isActive={true}/>
+                    <AudioPlayer isActive={true}/>
+              
                 <Footer />
             </div>
         )
