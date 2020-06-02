@@ -1,5 +1,5 @@
 import React from 'react'
-import Slideshow from './Slideshow'
+import Slideshow from './slideshow_new'
 import ColorPicker from '../ColorPicker/ColorPicker'
 import AudioPlayer from '../AudioPlayer/AudioPlayer'
 import Footer from '../Footer/Footer'

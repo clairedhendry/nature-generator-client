@@ -1,9 +1,10 @@
 import React from 'react'
+import './InfoBlock.css'
 
-const InfoBlock = () => {
+export const InfoBlock = () => {
     return (
-        <div>
-            <p></p>
+        <div className="infoblock">
+            <h1>Choose a Color to Begin Your Journey</h1>
         </div>
     )
 }

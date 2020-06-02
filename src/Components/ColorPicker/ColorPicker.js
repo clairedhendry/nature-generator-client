@@ -12,11 +12,6 @@ static contextType = DataContext;
 
 render() {
 
-let className = 'colorPicker-box';
-if(this.props.isActive) {
-    className += ' hidden';
-}
-
 const colors = ColorData.imageCategories.map(color => {
 
     return (
@@ -25,8 +20,7 @@ const colors = ColorData.imageCategories.map(color => {
 
 })
   return (
-            <div className={className}>
-                Choose a color
+            <div className="colorPicker-box">
                 <div className="colors-box">
                 {colors}
                 </div>

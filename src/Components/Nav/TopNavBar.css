@@ -1,5 +1,5 @@
 .top-nav-bar {
-    background-color: #aaa;
+    margin-top: 15px;
     align-content: flex-end;
     position: fixed;
     top: 0;
@@ -17,9 +17,15 @@
     margin-top: 10px;
 }
 
-.navBar > a {
-    margin-left: 10px;
+.top-nav-bar > a {
     text-decoration: none;
     stroke-width: 2;
     color: white;
+    padding-left: 15px; padding-right: 15px;
+    padding-top: 5px; padding-bottom: 5px;
+    border-radius: 10%;
 } 
+
+.new_text_color {
+    color: black;
+}

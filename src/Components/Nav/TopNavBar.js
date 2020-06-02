@@ -8,41 +8,20 @@ class TopNavBar extends React.Component {
 
     static contextType = DataContext;
 
-handleLogOutClick = () => {
-
-}
-
-renderLogInForm() {
-                
-        return (
-            <div className="navBar hidden">
-                {/* <LoginForm/>
-                <Link to='/registration'>Register</Link> */}
-                <Link to='/'>Home</Link>
-            </div>
-        )
-    }
-    
-renderLogOutLink() {
-        return (
-        <div className="navBar">
-            {/* <Link onClick={this.handleLogOutClick} to='/'>LogOut</Link>
-            <Link to="/accounts/:user_name">Account</Link> */}
-            <Link to='/'>Home</Link>
-        </div>
-        )
-    }
-    
-
 
 
     render() {
+
+// let className = `${this.context.state.colorChosen}`
+// if(this.context.state.colorChosen === 'yellow') {
+//     className = className += 'new_text_color'
+// }
+// style={{backgroundColor: className}}
+
         return (
 
             <nav className="top-nav-bar">
-                {TokenService.hasAuthToken() 
-                ? this.renderLogOutLink()
-                : this.renderLogInForm()}
+                <Link to='/' >Home</Link>
             </nav>
                 
                 

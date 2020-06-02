@@ -13,20 +13,44 @@ class App extends React.Component {
 
 static contextType = DataContext;
 
+updatePhotos = () => {
+  
+    if(this.context.state.photoData.length === 0) {
+      return (
+        <main>
+        <Route exact path="/" component={HomePage}/>
+        
+        {/* <Route exact path="/registration" component={RegistrationPage}/>
+        <Route path="/accounts/:user_name" component={AccountsPage}/> */}
+      </main>
+      )
+    } else {
+      return (
+        <main>
+        <Route exact path="/" component={HomePage}/>
+        <Route path="/slideshow/:color" component={SlideshowPage}/>
+      </main>
+      )
+    }
+  }
+
+
   render() {
 
-
+const photos = this.updatePhotos()
     return (
       <div className="main_body">
         {/* <div>
           <TopNavBar />
         </div> */}
-        <main>
+        {/* <main>
           <Route exact path="/" component={HomePage}/>
           <Route path="/slideshow/:color" component={SlideshowPage}/>
-          {/* <Route exact path="/registration" component={RegistrationPage}/>
-          <Route path="/accounts/:user_name" component={AccountsPage}/> */}
-        </main>
+          <Route exact path="/registration" component={RegistrationPage}/>
+          <Route path="/accounts/:user_name" component={AccountsPage}/>
+        </main> */}
+
+        {photos}
       </div>
     )
   
