@@ -46,3 +46,8 @@
     flex: 1;
 } */
 
+@media screen and (max-width: 500px) {
+    .colorPicker-box {
+        top: 70vh;
+    }
+}
