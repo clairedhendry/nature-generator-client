@@ -8,19 +8,38 @@ class ColorPicker extends React.Component {
 
 static contextType = DataContext;
 
-
-
-render() {
-
-const colors = ColorData.imageCategories.map(color => {
+renderColors() {
+    let colors;
+    let className = 0.5
+if(!this.context.state.slideshowEngaged) {
+    colors = ColorData.imageCategories.map(color => {
 
     return (
         <Color color={color.color} key={color.id} />
         )
 
 })
+} else {
+    colors = ColorData.imageCategories.map(color => {
+        return (
+    
+                <Color color={color.color} key={color.id} opacity={className}/>
+         
+        )
+    })
+} return colors;
+}
+
+componentDidMount() {
+    this.renderColors()
+}
+
+render() {
+
+    const colors = this.renderColors()
+
   return (
-            <div className="colorPicker-box">
+            <div className="colorPicker-box"> 
                 <div className="colors-box">
                 {colors}
                 </div>

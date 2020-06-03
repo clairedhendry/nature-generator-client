@@ -28,13 +28,14 @@ render() {
 
 
 let colorClassName = `${this.props.color}`
-
+let opacity = this.props.opacity
 let path = `/slideshow/${colorClassName}`
 
         return (
             <Link 
                 to={path}
                 className={colorClassName} 
+                style={{opacity: opacity}}
                 type="button" 
                 aria-label={colorClassName} 
                 id={colorClassName}

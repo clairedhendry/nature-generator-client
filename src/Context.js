@@ -100,6 +100,13 @@ updateSlideshowEngaged = () => {
     this.setState({
         slideshowEngaged: true,
     })
+  
+}
+
+revertSlideshowEngaged = () => {
+    this.setState({
+        slideshowEngaged: false
+    })
 }
 
 updateColorCategories = (value) => {
@@ -137,8 +144,7 @@ render() {
                 actions: {
                     updateColorChosen: this.updateColorChosen,
                     updateSlideshowEngaged: this.updateSlideshowEngaged,
-                    generateSlideshow: this.generateSlideshow,
-                    generateAudioTrack: this.generateAudioTrack,
+                    revertSlideshowEngaged: this.revertSlideshowEngaged,
                     updateLoggedIn: this.updateLoggedIn,
                     updateColorCategories: this.updateColorCategories,
                     clearFetchData: this.clearFetchData,

@@ -30,6 +30,8 @@
     left: 0; right: 0;
     top: 90vh; bottom: 30px;
     transition: all 0.5s;
+
+    
 }
 .colorPicker-box:hover {
     top: 0;
@@ -40,11 +42,15 @@
     justify-content: space-between;
     margin: 0;
 }
+
+
+
 /* 
 .colors-box > a {
     text-align: center;
     flex: 1;
 } */
+
 
 @media screen and (max-width: 500px) {
     .colorPicker-box {
