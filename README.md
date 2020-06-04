@@ -23,11 +23,11 @@ Choose a color and a nature category is selected at random to generate a corresp
 
 ## Screenshots 
 
-[homepage]: ./src/image_files/homepage.png "Homepage Example"
+![homepage](./src/image_files/homepage.png "Homepage Example")
 
-[screenshot2]: ./src/image_files/screenshot1.png "Screenshot Example 2"
+![screenshot2](./src/image_files/screenshot1.png "Screenshot Example 2")
 
-[screenshot3]: ./src/image_files/screenshot3.png "Screenshot Example 3"
+![screenshot3](./src/image_files/screenshot3.png "Screenshot Example 3")
 
 -------------------------------------
 
