@@ -34,9 +34,15 @@ Choose a color and a nature category is selected at random to generate a corresp
 ## Technology Used
 
 This app was created using ReactJS, Node, Express, and PostgreSQL. 
-Sounds courtesy of [Freesound.org](https://freesound.org/).
+
 Images courtesy of [Pixabay.com](https://pixabay.com/).
 
+Sounds courtesy of [Freesound.org](https://freesound.org/).
+Special sound credit to:
+- psubhashish
+- florianeichelt [instagram](https://www.instagram.com/florianreichelt/)
+- Leandros.Ntounis
+- pcaeldries
 
 
 
