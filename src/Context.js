@@ -11,19 +11,12 @@ state = {
     colorChosen: "",
     categoryChosen: "",
     chosenColorCategories: '',
-    user: {
-        userName: 'demo-user',
-        password: 'demo-password',
-        email: 'demo@email.com'
-    },
-    loggedIn: false,
     audio: {
         ogg: "",
         mp3: "",
     },
     slideshowEngaged: false,
     photoData: [],
-    authorization: "",
     orientation: 'portrait'
 }
 
@@ -116,13 +109,6 @@ updateColorCategories = (value) => {
     })
 }
 
-updateLoggedIn = () => {
-    if(!this.state.loggedIn) {
-        this.setState({
-            loggedIn: true
-        })
-    }
-}
 
 clearFetchData = () => {
     this.setState({
@@ -145,7 +131,6 @@ render() {
                     updateColorChosen: this.updateColorChosen,
                     updateSlideshowEngaged: this.updateSlideshowEngaged,
                     revertSlideshowEngaged: this.revertSlideshowEngaged,
-                    updateLoggedIn: this.updateLoggedIn,
                     updateColorCategories: this.updateColorCategories,
                     clearFetchData: this.clearFetchData,
                 }

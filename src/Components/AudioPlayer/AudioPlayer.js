@@ -8,14 +8,6 @@ class AudioPlayer extends React.Component {
 
 static contextType = DataContext;
 
-state = {
-    audio: {
-        ogg: this.context.state.audio.ogg,
-        mp3: this.context.state.audio.mp3,
-    }
-}
-
-
     render() {
 
 

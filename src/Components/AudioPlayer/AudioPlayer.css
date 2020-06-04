@@ -13,3 +13,9 @@
     z-index: 12;
     visibility: visible;
 }
+
+@media screen and (max-width: 500px) {
+    .audio-player {
+        width: 40%;
+    }
+}

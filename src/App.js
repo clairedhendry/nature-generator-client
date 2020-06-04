@@ -19,9 +19,6 @@ updatePhotos = () => {
       return (
         <main>
         <Route exact path="/" component={HomePage}/>
-        
-        {/* <Route exact path="/registration" component={RegistrationPage}/>
-        <Route path="/accounts/:user_name" component={AccountsPage}/> */}
       </main>
       )
     } else {
@@ -40,17 +37,7 @@ updatePhotos = () => {
 const photos = this.updatePhotos()
     return (
       <div className="main_body">
-        {/* <div>
-          <TopNavBar />
-        </div> */}
-        {/* <main>
-          <Route exact path="/" component={HomePage}/>
-          <Route path="/slideshow/:color" component={SlideshowPage}/>
-          <Route exact path="/registration" component={RegistrationPage}/>
-          <Route path="/accounts/:user_name" component={AccountsPage}/>
-        </main> */}
-
-        {photos}
+         {photos}
       </div>
     )
   
