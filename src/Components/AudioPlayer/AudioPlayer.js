@@ -16,8 +16,8 @@ static contextType = DataContext;
             <div className="audio-player hidden">
                 <ReactAudioPlayer
           
-                    src={this.context.state.audio.ogg || this.context.state.audio.mp3}
-         
+                   
+                    src={this.context.state.audio.mp3}
                     autoPlay
                     controls
                     loop
