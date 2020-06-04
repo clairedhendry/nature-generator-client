@@ -31,7 +31,6 @@ updatePhotos = () => {
     }
   }
 
-
   render() {
 
 const photos = this.updatePhotos()
@@ -40,8 +39,6 @@ const photos = this.updatePhotos()
          {photos}
       </div>
     )
-  
-  
   }
   
 }
