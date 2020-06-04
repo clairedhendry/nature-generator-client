@@ -15,13 +15,10 @@ static contextType = DataContext;
         return (
             <div className="audio-player hidden">
                 <ReactAudioPlayer
-          
-                   
                     src={this.context.state.audio.mp3}
                     autoPlay
                     controls
                     loop
-                   
                 />
             </div>
         )
