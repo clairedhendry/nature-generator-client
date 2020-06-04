@@ -32,6 +32,9 @@ export default class Slideshow extends React.Component {
     }
 
     renderPhoto() {
+        if(this.context.state.photoData.hits.length === 0) {
+            return <div className="no-color-selected">Please Select a Color</div>
+        }
         const width = window.innerWidth;
         if(width <= 500) {
             return(
@@ -40,7 +43,12 @@ export default class Slideshow extends React.Component {
                 (img, i) => 
             
                 this.state.currentImage === i && (
-                    <img className="slide fade-in" key={i} id={i} src={img.webformatURL} alt={`${img.type} of ${img.tags}`} />
+                    <div
+                    className="slide fade-in" 
+                    key={i} 
+                    id={i} 
+                    style={{backgroundImage: `url(${img.webformatURL})`}} 
+                    aria-label={`${img.type} of ${img.tags}`} />
                     )
                     
                 )}
@@ -53,7 +61,12 @@ export default class Slideshow extends React.Component {
                 (img, i) => 
            
                 this.state.currentImage === i && (
-                    <img className="slide fade-in" key={i} id={i} src={img.largeImageURL} alt={`${img.type} of ${img.tags}`} />
+                    <div
+                    className="slide fade-in" 
+                    key={i} 
+                    id={i} 
+                    style={{backgroundImage: `url(${img.webformatURL})`}} 
+                    aria-label={`${img.type} of ${img.tags}`} />
                     )
                 
                 )}
@@ -62,9 +75,10 @@ export default class Slideshow extends React.Component {
             }
         }
 
+ 
+
     render() {
 
- 
     const photos = this.renderPhoto()
 
         return (

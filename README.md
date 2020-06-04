@@ -12,6 +12,11 @@ Choose a color and relax!
 
 ## API Documentation
 
+/GET /slideshow/:color will return a slideshow with images selected from a random category defined by color.
+
+/GET /audio/:color/:category selects a random audio track based on color and category selection.
+
+
 -------------------------------------
 
 ## Summary
@@ -38,11 +43,13 @@ This app was created using ReactJS, Node, Express, and PostgreSQL.
 Images courtesy of [Pixabay.com](https://pixabay.com/).
 
 Sounds courtesy of [Freesound.org](https://freesound.org/).
+
 Special sound credit to:
 - psubhashish
 - florianeichelt [instagram](https://www.instagram.com/florianreichelt/)
 - Leandros.Ntounis
 - pcaeldries
+- everythingsounds
 
 
 

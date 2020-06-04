@@ -16,7 +16,9 @@ state = {
         mp3: "",
     },
     slideshowEngaged: false,
-    photoData: {},
+photoData: {
+    hits: []
+},
     orientation: 'portrait'
 }
 
