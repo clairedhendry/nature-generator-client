@@ -8,7 +8,6 @@ export default class Slideshow extends React.Component {
 
     state = {
       
-        sampleImage: ['https://pixabay.com/get/54e7dd4b4c54ae14f1dc84609629327d1d39dce4504c704c7c2e79d39e4ac'],
         currentImage: 0,
     }
 
@@ -70,7 +69,7 @@ export default class Slideshow extends React.Component {
                     className="slide fade-in" 
                     key={i} 
                     id={i} 
-                    style={{backgroundImage: `url(${img.webformatURL})`}} 
+                    style={{backgroundImage: `url(${img.largeImageURL})`}} 
                     aria-label={`${img.type} of ${img.tags}`} />
                     )
                 
