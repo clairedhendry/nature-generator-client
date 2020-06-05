@@ -7,13 +7,13 @@ import {InfoBlock} from './InfoBlock'
 
 
 class HomePage extends React.Component {
-    
+
     render() {
       
         return (
             <div>
                 <Header />
-                <ColorPicker />
+                <ColorPicker test={false}/>
                 <InfoBlock/>
                 <Footer />
             </div>

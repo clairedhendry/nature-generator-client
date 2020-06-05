@@ -7,8 +7,9 @@ export default class Slideshow extends React.Component {
     static contextType = DataContext;
 
     state = {
- 
-        currentImage: 0
+      
+        sampleImage: ['https://pixabay.com/get/54e7dd4b4c54ae14f1dc84609629327d1d39dce4504c704c7c2e79d39e4ac'],
+        currentImage: 0,
     }
 
     static timer = null;
@@ -32,14 +33,18 @@ export default class Slideshow extends React.Component {
     }
 
     renderPhoto() {
-        if(this.context.state.photoData.hits.length === 0) {
+        const  photos  = this.props.photos ? this.props.photos : this.context.state.photoData.hits;
+        
+        if(photos.length === 0) {
             return <div className="no-color-selected">Please Select a Color</div>
         }
+        
+        
         const width = window.innerWidth;
         if(width <= 500) {
             return(
             <div className="slideshow">
-            {this.context.state.photoData.hits.map(
+            {photos.map(
                 (img, i) => 
             
                 this.state.currentImage === i && (
@@ -57,7 +62,7 @@ export default class Slideshow extends React.Component {
         else {
             return (
             <div className="slideshow">
-             {this.context.state.photoData.hits.map(
+             {photos.map(
                 (img, i) => 
            
                 this.state.currentImage === i && (

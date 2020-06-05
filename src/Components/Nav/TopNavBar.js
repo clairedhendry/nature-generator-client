@@ -13,22 +13,17 @@ class TopNavBar extends React.Component {
         this.context.actions.revertSlideshowEngaged()
     }
 
-    render() {
+render() {
 
-
+const track = this.props.track ? this.props.track : false
 
         return (
-
-
 
             <nav className="top-nav-bar">
                 <a href='/' onClick={this.onButtonClick}>Home</a>
                 <div className="spacer"></div>
-                <AudioPlayer />
+                <AudioPlayer track={track}/>
             </nav>
-                
-                
-          
         )
     }
 }

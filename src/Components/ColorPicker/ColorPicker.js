@@ -11,7 +11,8 @@ static contextType = DataContext;
 renderColors() {
     let colors;
     let className = 0.5
-if(!this.context.state.slideshowEngaged) {
+    const test = this.props.test ? this.props.test : !this.context.state.slideshowEngaged;
+if(test) {
     colors = ColorData.imageCategories.map(color => {
 
     return (

@@ -10,12 +10,12 @@ static contextType = DataContext;
 
     render() {
 
-
+const track = this.props.track ? this.props.track : this.context.state.audio.mp3;
         
         return (
             <div className="audio-player hidden">
                 <ReactAudioPlayer
-                    src={this.context.state.audio.mp3}
+                    src={track}
                     autoPlay
                     controls
                     loop
