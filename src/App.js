@@ -1,10 +1,9 @@
 import React from 'react';
-import {Route} from  "react-router-dom"
-import {DataContext} from './Context'
+import {Route} from  "react-router-dom";
+import {DataContext} from './Context';
 
-import SlideshowPage from '../src/Components/SlideshowPage/SlideshowPage'
-import HomePage from '../src/Components/HomePage/HomePage'
-
+import SlideshowPage from '../src/Components/SlideshowPage/SlideshowPage';
+import HomePage from '../src/Components/HomePage/HomePage';
 
 import './App.css';
 
@@ -33,7 +32,8 @@ updatePhotos = () => {
 
   render() {
 
-const photos = this.updatePhotos()
+const photos = this.updatePhotos();
+
     return (
       <div className="main_body">
          {photos}
@@ -41,6 +41,6 @@ const photos = this.updatePhotos()
     )
   }
   
-}
+};
  
 export default App;

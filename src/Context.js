@@ -1,6 +1,6 @@
-import React from 'react'
-import ColorData from './ColorData/ColorData'
-import config from './config'
+import React from 'react';
+import ColorData from './ColorData/ColorData';
+import config from './config';
 
 
 export const DataContext = React.createContext();
@@ -8,19 +8,19 @@ export const DataContext = React.createContext();
 export class DataProvider extends React.Component {
 
 state = {
-    colorChosen: "",
-    categoryChosen: "",
+    colorChosen: '',
+    categoryChosen: '',
     chosenColorCategories: '',
     audio: {
-        ogg: "",
-        mp3: "",
+        ogg: '',
+        mp3: '',
     },
     slideshowEngaged: false,
 photoData: {
     hits: []
 },
     orientation: 'portrait'
-}
+};
 
 
 updateColorChosen = (color) => {
@@ -84,42 +84,33 @@ updateColorChosen = (color) => {
     .catch((err) => {
         console.log(`something went wrong: ${err.message}`)
     })
-}
-
-
-
-
+};
 
 updateSlideshowEngaged = () => {
     if(!this.state.slideshowEngaged)
     this.setState({
         slideshowEngaged: true,
     })
-  
-}
+};
 
 revertSlideshowEngaged = () => {
     this.setState({
         slideshowEngaged: false
     })
-}
+};
 
 updateColorCategories = (value) => {
     const color = ColorData.imageCategories.find(color => color.color === value)
     this.setState({
         chosenColorCategories: color.category
     })
-}
-
+};
 
 clearFetchData = () => {
     this.setState({
         photoData: []
     })
-}
-
-
-
+};
 
 
 render() {
