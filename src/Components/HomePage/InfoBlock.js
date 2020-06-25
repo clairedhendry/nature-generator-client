@@ -1,5 +1,5 @@
-import React from 'react'
-import './InfoBlock.css'
+import React from 'react';
+import './InfoBlock.css';
 
 export const InfoBlock = () => {
     return (
@@ -7,4 +7,4 @@ export const InfoBlock = () => {
             <h1>choose a color to begin your journey</h1>
         </div>
     )
-}
+};

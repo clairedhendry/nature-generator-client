@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import ColorPicker from './ColorPicker'
-import { BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ColorPicker from './ColorPicker';
+import { BrowserRouter } from 'react-router-dom';
 
 
 it ('renders without crashing', () => {
@@ -12,4 +12,4 @@ it ('renders without crashing', () => {
     <ColorPicker test={test}/>
     </BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
-})
+});
