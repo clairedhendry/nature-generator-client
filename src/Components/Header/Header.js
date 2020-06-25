@@ -3,7 +3,7 @@ import './Header.css'
 
 const Header = () => (
     <div className="header">
-        Escape to Nature
+        escape to nature
     </div>
 )
 

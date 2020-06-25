@@ -8,4 +8,6 @@
 .infoblock {
     margin-bottom: 50vh;
     padding: 20px;
+    background-color: black;
+    color: white;
 }
