@@ -75,7 +75,8 @@ export default class InfoBLock extends React.Component {
                         style={{
                             backgroundImage: `url(${this.state.photoData.hits[number].largeImageURL})`,
                             backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat"
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover"
                         }}>
 
                         <div className="homepage-header">click a color to begin</div>
